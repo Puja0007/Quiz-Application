@@ -1,0 +1,40 @@
+<div class="background">
+    <div class="card quiz_box">
+        <header>
+            <div class="d-flex justify-content-between">
+                <h3>Awesome Quiz Application!</h3>
+            </div>
+            
+        </header>
+        <ng-container *ngIf="displayLoader">
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only"> </span>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="!displayLoader">
+
+          <div class="card-body">
+            <!-- <h5 class="card-title">Q</h5> -->
+            <p class="card-text"> {{qid}}. {{current_Question.question}}</p>
+          </div>
+          <!-- <ul class="list-group list-group-flush">
+            <li class="list-group-item">1. Cras justo odio</li>
+            <li class="list-group-item">2. Dapibus ac facilisis in</li>
+            <li class="list-group-item">3. Vestibulum at eros</li>
+            <li class="list-group-item">4. Vestibulum at eros</li>
+          </ul> -->
+          <div style="padding: 10px;" #option>
+            <div class="form-check" *ngFor="let opt of current_Question.options; let i=index">
+              <input class="form-check-input" id="puja-{{i}}" type="radio" name="flexRadioDefault"
+                value="{{opt}}" (change)="onItemChange($event.target.value)">
+              <label class="form-check-label" for="puja-{{i}}">
+                {{opt}}
+              </label>
+            </div>
+          </div>
+          
+          
+        </ng-container>
+      </div>
+</div>
+

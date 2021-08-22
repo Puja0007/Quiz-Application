@@ -1,0 +1,123 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Who is sometimes called as father of Angularjs?",
+      "options": [
+        "Brad Green",
+        "Misko Hevery",
+        "Brad Richardson",
+        "Chuck Jazdzewski"
+      ],
+      "correct_option": "Misko Hevery"
+    },
+    {
+      "id": 2,
+      "question": "Which of the following is correct about TypeScript?",
+      "options": [
+        "Angular is based on TypeScript",
+        "This is a superset of JavaScript.",
+        "TypeScript is maintained by Microsoft.",
+        "All of the above"
+      ],
+      "correct_option": "All of the above"
+    },
+    {
+      "id": 3,
+      "question": "What is the decorator used for configuring your module class?",
+      "options": [
+        "@NgModule",
+        "@NgApp",
+        "Both",
+        "None of above"
+      ],
+      "correct_option": "@NgModule"
+    },
+    {
+      "id": 4,
+      "question": "Which angular decorator allows us to define the pipe name that is globally available for use in any template in the across application?",
+      "options": [
+        "pipeName",
+        "pipeDeco",
+        "Pipe",
+        "None of the above"
+      ],
+      "correct_option": "Pipe"
+    },
+    {
+      "id": 5,
+      "question": "RxJS can be used for?",
+      "options": [
+        "Browser",
+        "Server Side",
+        "Both",
+        "None of above"
+      ],
+      "correct_option": "Both"
+    }
+  ],
+  "user-response": [
+    {
+      "id": 1,
+      "name": "Puja Das",
+      "score": 3,
+      "user-id": 1
+    },
+    {
+      "name": "test user",
+      "score": 3,
+      "user-id": 2,
+      "id": 2
+    },
+    {
+      "name": "test user",
+      "score": 2,
+      "user-id": 2,
+      "id": 3
+    },
+    {
+      "name": "test user",
+      "score": 3,
+      "user-id": 2,
+      "id": 4
+    },
+    {
+      "name": "test user",
+      "score": 1,
+      "user-id": 2,
+      "id": 5
+    },
+    {
+      "name": "test user",
+      "score": 3,
+      "user-id": 2,
+      "id": 6
+    },
+    {
+      "name": "New user",
+      "score": 3,
+      "user-id": 3,
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Puja Das",
+      "email": "puja@test.com",
+      "password": "test1234"
+    },
+    {
+      "name": "test user",
+      "email": "abc@ymail.com",
+      "password": "test1234",
+      "id": 2
+    },
+    {
+      "name": "New user",
+      "email": "new@abc.com",
+      "password": "user1234",
+      "id": 3
+    }
+  ]
+}

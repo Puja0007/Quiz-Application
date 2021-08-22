@@ -1,0 +1,46 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  
+
+}
+    
+
+#cover{
+    height: 100vh;
+    background-image: url(../../assets/BG.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f7f8fc;
+    
+}
+
+
+#happy{
+  margin:117px auto;
+
+}
+h2{
+
+  font-size:15px bold;
+}
+input[type=text], input[type=password],input[type=email],label {
+  width: 200px;
+  /* margin: 5px 0 10px 0; */
+  /* font-size: 20px; */
+  
+}
+
+button{
+  width: 200px;
+  height: 30px;
+  font-size: 12px;
+}
+
+  
+  /* Full-width input fields */
+  

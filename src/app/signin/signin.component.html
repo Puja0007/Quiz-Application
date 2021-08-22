@@ -1,0 +1,35 @@
+<div class="container-fluid" id="background">
+    <div class="row">
+      <div id="cover" class="col-md-6">
+        <div style="padding-left:25px; padding-top: 25px;">
+           <!-- <img src="../../../assets/DEVICEMANAGER.svg" alt="Device Manager"> -->
+           <h1>Quiz Time !</h1>
+        </div>
+    </div>
+    <form class="col-md-6" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="col-md-3" id="happy">
+          <h2 style="font-size: 30px; font-weight: bold;">Login</h2>
+          <br>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="fname"  aria-describedby="fname" placeholder="Enter email" formControlName="email">
+            <small class="text-danger" [class.d-none]="loginForm.get('email').valid || loginForm.get('email').untouched">Email is required</small>
+          </div>
+          <br>
+           <div class="form-group">
+            <label for="psw" class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Enter Password" id="psw" formControlName="pswrd">
+            <small class="text-danger" [class.d-none]="loginForm.get('pswrd').valid || loginForm.get('pswrd').untouched">Password is required</small>
+          </div>
+          
+           <br>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+          
+          <p style="font-size: 13px;">Don't have an account? <a routerLink="/signup">Register here.</a>.</p>
+        </div>
+      </form>
+    </div>
+  
+  
+    </div>
+      
