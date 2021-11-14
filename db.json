@@ -118,6 +118,12 @@
       "email": "new@abc.com",
       "password": "user1234",
       "id": 3
+    },
+    {
+      "name": "Arya Stark",
+      "email": "arya@abc.com",
+      "password": "ar123",
+      "id": 4
     }
   ]
 }
