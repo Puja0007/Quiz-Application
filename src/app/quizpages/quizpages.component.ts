@@ -26,20 +26,20 @@ export class QuizpagesComponent implements OnInit {
   @ViewChild('option') options:ElementRef
   constructor(private http: HttpClient, private authService:AuthService,private route:Router) { }
   displayResult(){
+    console.log(this.authService.getCurrentUser());
+    const currentuserDetails = this.authService.getCurrentUser();
     this.userResponse = {
-      
-      name:this.authService.currentUser.name,
+      userId:currentuserDetails.id,
       score:this.current_score,
-      userId:this.authService.currentUser.id,
+      name:currentuserDetails.name
+      
     }
     
-    this.http.post<any>(`${environment.baseUrl}/user-response/`, this.userResponse)
+    this.http.post<any>(`${environment.baseUrl}/result/`, this.userResponse)
     .subscribe(result=>{
       this.authService.currUserResponse ={
-        name:result.name,
         score:result.score,
-        userId:result["user-id"],
-        id:result.id
+        userId:result["_id"],
       }
 
       this.route.navigate(['result'])

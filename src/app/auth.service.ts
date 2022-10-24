@@ -7,27 +7,35 @@ import { LoginResponse } from './model/login.model';
 })
 export class AuthService {
   isAuthenticated: boolean = false;
-  currentUser: User;
+  private currentUser: User=null;
   currUserResponse: UserResponse;
   token: string = '';
   private authTimer = null;
   examDuration: number = 0;
 
   loggedIn(isAuth: boolean, loginResponse: LoginResponse) {
+    console.log(loginResponse);
     const { email, _id, name, duration, token } = loginResponse;
     const currUser: User = {
       email,
       id: _id,
       name,
     };
+    // console.log(currUser);
     this.token = token;
     this.isAuthenticated = isAuth;
     this.currentUser = currUser;
     this.examDuration = duration;
+    console.log("login currentuser",this.currentUser);
     this.authTimer = setTimeout(() => {
       this.loggedOut();
     }, duration);
   }
+
+getCurrentUser() : User{
+    return {...this.currentUser};
+
+}
 
   loggedOut() {
     this.isAuthenticated = false;
