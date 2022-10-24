@@ -16,7 +16,7 @@ export class ResultComponent implements OnInit {
 
   ngOnInit(): void {
     this.currUserResonse= this.authService.currUserResponse
-    this.http.get<UserResponse[]>(`${environment.baseUrl}/user-response`)
+    this.http.get<UserResponse[]>(`${environment.baseUrl}/result`)
     .subscribe(results=>{
       this.results = results.sort((a:UserResponse,b:UserResponse)=>{
         return b.score-a.score
