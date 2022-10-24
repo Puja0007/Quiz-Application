@@ -8,7 +8,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "newscripts" : "node json-api-server.js",
     "prod": "ng serve --prod && npm run newscripts"
   },
   "private": true,

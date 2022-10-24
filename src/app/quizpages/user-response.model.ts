@@ -1,6 +1,6 @@
 export interface UserResponse {
-    "id"?: number,
+    "id"?: string,
     "name": string,
     "score": number,
-    "user-id"?:number
+    "userId"?:string
 }

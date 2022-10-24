@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { AuthService } from '../auth.service';
 import { UserResponse } from '../quizpages/user-response.model';
 
@@ -15,7 +16,7 @@ export class ResultComponent implements OnInit {
 
   ngOnInit(): void {
     this.currUserResonse= this.authService.currUserResponse
-    this.http.get<UserResponse[]>('http://localhost:4500/user-response')
+    this.http.get<UserResponse[]>(`${environment.baseUrl}/user-response`)
     .subscribe(results=>{
       this.results = results.sort((a:UserResponse,b:UserResponse)=>{
         return b.score-a.score

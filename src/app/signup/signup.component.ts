@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { SingnupResponse } from '../model/signup.model';
 
 @Component({
   selector: 'app-signup',
@@ -25,7 +27,7 @@ export class SignupComponent implements OnInit {
   onSubmit(){
     if(this.registerForm.valid){
 
-      this.http.post<any>('http://localhost:4500/users/',
+      this.http.post<SingnupResponse>(`${environment.baseUrl}/auth/signup`,
       {
         name: this.registerForm.value.fullname,
         email:this.registerForm.value.email,

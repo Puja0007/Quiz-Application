@@ -1,9 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Question } from './quiz.model';
+import { Question } from '../model/quiz.model';
 import { UserResponse } from './user-response.model';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-quizpages',
   templateUrl: './quizpages.component.html',
@@ -29,15 +30,15 @@ export class QuizpagesComponent implements OnInit {
       
       name:this.authService.currentUser.name,
       score:this.current_score,
-      "user-id":this.authService.currentUser.id,
+      userId:this.authService.currentUser.id,
     }
     
-    this.http.post<any>('http://localhost:4500/user-response/', this.userResponse)
+    this.http.post<any>(`${environment.baseUrl}/user-response/`, this.userResponse)
     .subscribe(result=>{
       this.authService.currUserResponse ={
         name:result.name,
         score:result.score,
-        "user-id":result["user-id"],
+        userId:result["user-id"],
         id:result.id
       }
 
@@ -71,7 +72,7 @@ export class QuizpagesComponent implements OnInit {
     this.resetAll()
   }
   ngOnInit(): void {
-    this.http.get<Question[]>('http://localhost:4500/questions/')
+    this.http.get<Question[]>(`${environment.baseUrl}/question/`)
     .subscribe(result=>{
       
     this.all_Questions=result;
@@ -85,16 +86,16 @@ export class QuizpagesComponent implements OnInit {
   }
   onItemChange(value:string){
     Array.from(this.options.nativeElement.children).forEach((element:HTMLDivElement)=>{
-      if(element.children[1].innerHTML.trim()===value.trim() && value=== this.current_Question.correct_option){
+      if(element.children[1].innerHTML.trim()===value.trim() && value=== this.current_Question.correctAnswer){
 
         element.children[1].classList.add('correct-option')
       }
-      else if(element.children[1].innerHTML.trim()===value.trim() && value!== this.current_Question.correct_option){
+      else if(element.children[1].innerHTML.trim()===value.trim() && value!== this.current_Question.correctAnswer){
 
         element.children[1].classList.add('wrong-option')
       }
     })
-    if(value=== this.current_Question.correct_option && !this.ansSet){
+    if(value=== this.current_Question.correctAnswer && !this.ansSet){
 
       this.correct = true
       this.current_score += 1
@@ -113,7 +114,7 @@ export class QuizpagesComponent implements OnInit {
         if(element.children[1].innerHTML.trim()===value.trim())
         element.children[1].classList.add('wrong-option')
 
-        else if(element.children[1].innerHTML.trim()===this.current_Question.correct_option){
+        else if(element.children[1].innerHTML.trim()===this.current_Question.correctAnswer){
           element.children[1].classList.add('correct-option')
         }
       })
