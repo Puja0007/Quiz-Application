@@ -26,7 +26,6 @@ export class QuizpagesComponent implements OnInit {
   @ViewChild('option') options:ElementRef
   constructor(private http: HttpClient, private authService:AuthService,private route:Router) { }
   displayResult(){
-    console.log(this.authService.getCurrentUser());
     const currentuserDetails = this.authService.getCurrentUser();
     this.userResponse = {
       userId:currentuserDetails.id,

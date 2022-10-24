@@ -26,15 +26,13 @@ export class AuthService {
     this.isAuthenticated = isAuth;
     this.currentUser = currUser;
     this.examDuration = duration;
-    console.log("login currentuser",this.currentUser);
     this.authTimer = setTimeout(() => {
       this.loggedOut();
-    }, duration);
+    }, duration*1000);
   }
 
 getCurrentUser() : User{
     return {...this.currentUser};
-
 }
 
   loggedOut() {
