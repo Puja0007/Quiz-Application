@@ -97,7 +97,7 @@ export class QuizpagesComponent implements OnInit {
     if(value=== this.current_Question.correctAnswer && !this.ansSet){
 
       this.correct = true
-      this.current_score += 1
+      this.current_score += this.current_Question.marks;
       Array.from(this.options.nativeElement.children).forEach((element:HTMLDivElement)=>{
         if(element.children[1].innerHTML.trim()===value.trim())
         element.children[1].classList.add('correct-option')

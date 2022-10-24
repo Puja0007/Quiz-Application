@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
         password:this.registerForm.value.psw
       })
       .subscribe(result=>{
-        console.log(result);
+       // console.log(result);
         
         this.route.navigate(['signin'])
       }, err=>{

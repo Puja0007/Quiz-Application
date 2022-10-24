@@ -14,7 +14,7 @@ export class AuthService {
   examDuration: number = 0;
 
   loggedIn(isAuth: boolean, loginResponse: LoginResponse) {
-    console.log(loginResponse);
+  
     const { email, _id, name, duration, token } = loginResponse;
     const currUser: User = {
       email,
