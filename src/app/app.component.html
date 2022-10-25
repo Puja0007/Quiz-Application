@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand">QuizApp</a>
     <ul class="nav navbar-nav">
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="authService.isAuthenticated">
             <a class="nav-link" (click)="logout()">Log out</a>
         </li>
        

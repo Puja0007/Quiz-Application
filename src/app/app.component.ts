@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'quizapp';
 
   constructor( private route: Router,
-    private authService: AuthService){}
+    public authService: AuthService){}
 
   logout(){
     this.authService.loggedOut();
